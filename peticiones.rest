@@ -1,0 +1,76 @@
+@host = http://localhost:3000
+
+### ----  --  ----- Autores ----  -----  ####
+
+### Obtener todos los autores
+GET {{host}}/api/autores
+Accept: application/json
+
+### Obtener autor por ID
+GET {{host}}/api/autores/1
+Accept: application/json
+
+### Crear un nuevo autor
+POST {{host}}/api/autores
+Content-Type: application/json
+
+{
+    "nombre": "Juan Pérez",
+    "email": "juan.perez@ejemplo.com",
+    "imagen": "juan_perez.jpg"
+}
+
+### Actualizar autor por ID
+PUT {{host}}/api/autores/1
+Content-Type: application/json
+
+{
+    "nombre": "Juan Carlos Pérez",
+    "email": "juan.carlos@ejemplo.com",
+    "imagen": "juan_carlos.jpg"
+}
+
+### Eliminar autor por ID
+DELETE {{host}}/api/autores/2
+
+
+### ----  --  ----- POSTS ----  -----  ####
+
+### Obtener todos los posts
+GET {{host}}/api/posts
+Accept: application/json
+
+### Obtener post por ID
+GET {{host}}/api/posts/5
+Accept: application/json
+
+### Obtener posts por autor ID
+GET {{host}}/api/posts/autor/1
+Accept: application/json
+
+### Crear un nuevo post
+POST {{host}}/api/posts
+Content-Type: application/json
+
+{
+    "titulo": "Introducción a Python",
+    "descripcion": "Un artículo que cubre los conceptos básicos de Python.",
+    "fecha_creacion": "2023-10-01 09:00:00",
+    "categoria": "Programación",
+    "autor_id": 1
+}
+
+### Actualizar post por ID
+PUT {{host}}/api/posts/5
+Content-Type: application/json
+
+{
+    "titulo": "Introducción a Python (actualizado)",
+    "descripcion": "Un artículo actualizado que cubre los conceptos básicos de Python.",
+    "fecha_creacion": "2023-10-01 09:00:00",
+    "categoria": "Programación",
+    "autor_id": 1
+}
+
+### Eliminar post por ID
+DELETE {{host}}/api/posts/5
